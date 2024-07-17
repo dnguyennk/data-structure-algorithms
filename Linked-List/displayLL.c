@@ -34,11 +34,11 @@ void Display(struct Node *p){
         p=p->next;  //moving to next node
     }
 }
-/* Displaying the linked list */
+/* Displaying the linked list using recursive in reverse order, print while returning backward*/
 void RDisplay(struct Node *p){
     if (p!=NULL){
-        RDisplay(p->next);
-        printf("%d ", p->data);
+        RDisplay(p->next);      //Note: to display in normal order, simply swap
+        printf("%d ", p->data); //these 2 lines 
     }
 }
 
@@ -49,6 +49,8 @@ int main(){
     create(A, 5);
 
     Display(first); /*points to 1st node*/
+    printf("\n");
+    RDisplay(first); /* in reverse order*/
 
     return 0;
 }
